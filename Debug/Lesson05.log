@@ -1,0 +1,8 @@
+﻿  Demo.cpp
+C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(82,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(129,45): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(132,23): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(430,2): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(697,2): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(871,2): warning C4305: 'initializing': truncation from 'double' to 'float'
+  Lesson05.vcxproj -> C:\Users\ASUS\source\repos\grafkom\vs\Debug\Lesson05.exe
