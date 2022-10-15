@@ -18,7 +18,7 @@ private:
 	float angle = 0;
 	float position = 10;
 	float positionx = 5;
-	
+
 	float t2 = 0;
 	float t3 = 0;
 	float t4 = 0;
@@ -46,7 +46,7 @@ private:
 	virtual void DeInit();
 	virtual void Update(double deltaTime);
 	virtual void Render();
-	virtual void ProcessInput(GLFWwindow *window);
+	virtual void ProcessInput(GLFWwindow* window);
 	void BuildColoredCube();
 	void BuildColoredPlane();
 	void BuildColoredBaling();
@@ -56,4 +56,3 @@ private:
 	void DrawColoredCube();
 	void DrawColoredPlane();
 };
-

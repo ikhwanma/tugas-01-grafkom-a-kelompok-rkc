@@ -2,7 +2,12 @@
 C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(82,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
 C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(129,45): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(132,23): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
-C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(430,2): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(697,2): warning C4305: 'initializing': truncation from 'double' to 'float'
-C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(871,2): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(379,2): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(652,2): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\ASUS\source\repos\grafkom\vs\Lesson05\Demo.cpp(826,2): warning C4305: 'initializing': truncation from 'double' to 'float'
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+SOIL.lib(image_DXT.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'SOIL.lib(image_DXT.obj)' or at 'C:\Users\ASUS\source\repos\grafkom\vs\Debug\vc110.pdb'; linking object as if no debug info
+SOIL.lib(image_helper.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'SOIL.lib(image_helper.obj)' or at 'C:\Users\ASUS\source\repos\grafkom\vs\Debug\vc110.pdb'; linking object as if no debug info
+SOIL.lib(SOIL.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'SOIL.lib(SOIL.obj)' or at 'C:\Users\ASUS\source\repos\grafkom\vs\Debug\vc110.pdb'; linking object as if no debug info
+SOIL.lib(stb_image_aug.obj) : warning LNK4099: PDB 'vc110.pdb' was not found with 'SOIL.lib(stb_image_aug.obj)' or at 'C:\Users\ASUS\source\repos\grafkom\vs\Debug\vc110.pdb'; linking object as if no debug info
   Lesson05.vcxproj -> C:\Users\ASUS\source\repos\grafkom\vs\Debug\Lesson05.exe

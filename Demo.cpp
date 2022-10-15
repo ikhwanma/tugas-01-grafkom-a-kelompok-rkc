@@ -69,11 +69,11 @@ void Demo::Init() {
 		for (int j = 0; j <= 500; j++) {
 			t = (float)j / 500;
 
-			
+
 
 			float x = ((1 - t) * (1 - t) * xArr[i]) + (2 * (1 - t) * t * xArr[i + 1]) + (t * t * xArr[i + 2]);
 			xWay.push_back(x);
-			float z = ((1 - t) * (1 - t) * zArr[i]) + (2 * (1 - t) * t * zArr[i+1]) + (t * t * zArr[i+2]);
+			float z = ((1 - t) * (1 - t) * zArr[i]) + (2 * (1 - t) * t * zArr[i + 1]) + (t * t * zArr[i + 2]);
 			zWay.push_back(z);
 
 			float vector_a[] = { xArr[i], zArr[i] };
@@ -115,7 +115,7 @@ void Demo::ProcessInput(GLFWwindow* window) {
 }
 
 void Demo::Update(double deltaTime) {
-	
+
 	angle += (float)((deltaTime * 1.5f) / 40);
 
 	translateX = xWay[idx];
@@ -123,25 +123,25 @@ void Demo::Update(double deltaTime) {
 
 
 	if (idx < 500 || idx >= 1000 && idx < 1500 || idx >= 2000 && idx < 2500 || idx >= 3000 && idx < 3500) {
-		float vector_a[] = { xWay[idx], zWay[idx]};
-		float vector_b[] = { xWay[idx+1], zWay[idx+1]};
+		float vector_a[] = { xWay[idx], zWay[idx] };
+		float vector_b[] = { xWay[idx + 1], zWay[idx + 1] };
 
 		dotProd = dot_product(vector_a, vector_b) / (sqrt(pow(vector_a[0], 2) + pow(vector_a[1], 2)) * sqrt(pow(vector_b[0], 2) + pow(vector_b[1], 2)));
 
 
-		rx -= acos(dotProd) * 2.45 ;
+		rx -= acos(dotProd) * 2.45;
 	}
 
 
-	std::cout << "\nrX: " << dotProd;
+	//std::cout << "\nrX: " << dotProd;
 
 
 	idx++;
 	if (idx == 4000) {
 		idx = 0;
 	}
-	
-	
+
+
 }
 
 void Demo::Render() {
@@ -160,7 +160,7 @@ void Demo::Render() {
 	glUniformMatrix4fv(projLoc, 1, GL_FALSE, glm::value_ptr(projection));
 
 	// LookAt camera (position, target/direction, up)
-	glm::mat4 view = glm::lookAt(glm::vec3(0, 25, 25), glm::vec3(translateX, 0, translateZ ), glm::vec3(0, 1, 0));
+	glm::mat4 view = glm::lookAt(glm::vec3(0, 25, 25), glm::vec3(translateX, 0, translateZ), glm::vec3(0, 1, 0));
 	GLint viewLoc = glGetUniformLocation(this->shaderProgram, "view");
 	glUniformMatrix4fv(viewLoc, 1, GL_FALSE, glm::value_ptr(view));
 
@@ -170,7 +170,7 @@ void Demo::Render() {
 
 	DrawColoredBaling();
 
-	DrawColoredBalingBelakang();
+	//DrawColoredBalingBelakang();
 
 	glDisable(GL_DEPTH_TEST);
 }
@@ -346,6 +346,35 @@ void Demo::BuildColoredCube() {
 		2.6, -0.1, 0.1, 0, 1, // 98
 		2.8, -0.1, 0.1, 1, 1, // 99
 
+		// Moncong front
+		-1.5, -0.5, 0.2, 0, 0,  //100
+		-0.8, -0.5, 0.5, 1, 0, // 101
+		-0.8, 0.5, 0.5, 0, 1, // 102
+		-1.5, 0, 0.2, 1, 1,  //103
+
+		// back
+		-1.5, -0.5, -0.2, 0, 0,  //104
+		-0.8,  -0.5, -0.5, 1, 0, // 105
+		-0.8, 0.5, -0.5, 0, 1, // 106
+		-1.5, 0, -0.2, 1, 1,  //107
+
+		//left
+		-1.5, -0.5, -0.2, 0, 0,  //108
+		-1.5, -0.5, 0.2, 1, 0,  //109
+		-1.5, 0, 0.2, 0, 1,  //110
+		-1.5, 0, -0.2, 1, 1,  //111
+
+		// upper
+		-0.8, 0.5, 0.5, 0, 0,  // 112
+		-1.5, 0,  0.2, 1, 0,  // 113
+		-1.5, 0,  -0.2, 0, 1,  // 114
+		-0.8, 0.5, -0.5, 1, 1,  // 115
+
+		// buttom
+		-1.5, -0.5, -0.2, 0, 0,  // 116
+		-0.8, -0.5, -0.5, 1, 0,  // 117
+		-0.8, -0.5, 0.5, 0, 1,  // 118
+		-1.5, -0.5, 0.2, 1, 1,  // 119
 
 	};
 
@@ -375,6 +404,12 @@ void Demo::BuildColoredCube() {
 		88, 89, 90, 88, 90, 91, // Back
 		92, 94, 93, 92, 95, 94, // left
 		96, 98, 97, 96, 99, 98, // Bottom
+		100, 101, 102, 100, 102, 103, // Muncung front
+		104, 105, 106, 104, 106, 107,  // back
+		108, 110, 109, 108, 111, 110,  // Left
+		112, 114, 113, 112, 115, 114, //upper
+		116, 118, 117, 116, 119, 118 // buttom
+
 
 
 
@@ -427,8 +462,8 @@ void Demo::DrawColoredCube()
 
 
 	model = glm::translate(model, glm::vec3(translateX, 0, translateZ));
-	
-	model = glm::rotate(model, rx , glm::vec3(0, 1 , 0));
+
+	model = glm::rotate(model, rx, glm::vec3(0, 1, 0));
 
 	//model = glm::rotate(model, z, glm::vec3(0, 1, 0));
 
@@ -855,13 +890,11 @@ void Demo::DrawColoredBalingBelakang()
 
 	model = glm::translate(model, glm::vec3(translateX + 2.5, 0.3, translateZ - 0.1));
 
-	model = glm::translate(model, glm::vec3(rx, translateZ - 0.1));
-
 	model = glm::rotate(model, 1.5f, glm::vec3(1, 0, 0));
 
-	model = glm::rotate(model, rx, glm::vec3(0, 0, 1));
+	model = glm::rotate(model, rx, glm::vec3(0, 0, -1));
 
-	model = glm::rotate(model, rx, glm::vec3(0, 1, 0));
+	model = glm::rotate(model, rx, glm::vec3(0, -1, 0));
 
 	model = glm::rotate(model, angle, glm::vec3(0, 1, 0));
 
